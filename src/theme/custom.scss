@@ -1,0 +1,162 @@
+/**
+* Generated theme by Material Theme Generator
+* https://materialtheme.arcsine.dev
+* Fork at: https://materialtheme.arcsine.dev/?c=YHBhbGV0dGU$YHByaW1hcnk$YF48IzFlNmY5ZiIsIj9lcjwjMzI5NGY4IiwiO2VyPCMxNDU4OWN$LCIlPmBePCM1ZTYwY2UiLCI~ZXI8IzgyODRmYSIsIjtlcjwjNDI0NGJjfiwid2Fybj5gXjwjZGMzMTQwIiwiP2VyPCNmNWMxYzYiLCI7ZXI8I2NlMWYyYX4sIj9UZXh0PCMxMjEyMTIiLCI~PTwjZmFmYWZhIiwiO1RleHQ8I2U3ZWRmNCIsIjs9PCMxMTIxMzF$LCJmb250cz5bYEA8KC00IiwiZmFtaWx5PE51bml0b34sYEA8KC0zIiwiZmFtaWx5PE51bml0b34sYEA8KC0yIiwiZmFtaWx5PE51bml0b34sYEA8KC0xIiwiZmFtaWx5PE51bml0b34sYEA8aGVhZGxpbmUiLCJmYW1pbHk8TnVuaXRvfixgQDx0aXRsZSIsImZhbWlseTxOdW5pdG9$LGBAPHN1YiktMiIsImZhbWlseTxOdW5pdG9$LGBAPHN1YiktMSIsImZhbWlseTxOdW5pdG9$LGBAPGJvZHktMiIsImZhbWlseTxOdW5pdG9$LGBAPGJvZHktMSIsImZhbWlseTxOdW5pdG9$LGBAPGJ1dHRvbiIsImZhbWlseTxOdW5pdG9$LGBAPGNhcHRpb24iLCJmYW1pbHk8TnVuaXRvfixgQDxpbnB1dCIsImZhbWlseTxOdW5pdG8iLCJzaXplPm51bGx9XSwiaWNvbnM8RmlsbGVkIiwiP25lc3M$ZmFsc2UsInZlcnNpb24$MTN9
+*/
+
+@use '@angular/material' as mat;
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+
+// Compute font config
+@include mat.core();
+
+// Foreground Elements
+$light-text: #e7edf4;
+$light-primary-text: $light-text;
+$light-accent-text: rgba($light-primary-text, 0.7);
+$light-disabled-text: rgba($light-primary-text, 0.5);
+$light-dividers: rgba($light-primary-text, 0.12);
+$light-focused: rgba($light-primary-text, 0.12);
+
+$mat-dark-theme-foreground: (
+  base:              $light-text,
+  divider:           $light-dividers,
+  dividers:          $light-dividers,
+  disabled:          $light-disabled-text,
+  disabled-button:   rgba($light-text, 0.3),
+  disabled-text:     $light-disabled-text,
+  elevation:         black,
+  hint-text:         $light-disabled-text,
+  secondary-text:    $light-accent-text,
+  accent-text:       $light-accent-text,
+  icon:              $light-text,
+  icons:             $light-text,
+  text:              $light-text,
+  slider-min:        $light-text,
+  slider-off:        rgba($light-text, 0.3),
+  slider-off-active: rgba($light-text, 0.3),
+);
+
+// Background config
+$dark-background:     #071422;
+$dark-bg-lighter-5:   lighten($dark-background, 5%);
+$dark-bg-lighter-10:  lighten($dark-background, 10%);
+$dark-bg-lighter-20:  lighten($dark-background, 20%);
+$dark-bg-lighter-30:  lighten($dark-background, 30%);
+$light-bg-alpha-4:    rgba(#fafafa, 0.04);
+$light-bg-alpha-12:   rgba(#fafafa, 0.12);
+
+// Background palette for dark themes.
+$mat-dark-theme-background: (
+  background:               $dark-background,
+  status-bar:               $dark-bg-lighter-20,
+  app-bar:                  $dark-bg-lighter-5,
+  hover:                    $light-bg-alpha-4,
+  card:                     $dark-bg-lighter-5,
+  dialog:                   $dark-bg-lighter-5,
+  tooltip:                  $dark-bg-lighter-20,
+  disabled-button:          $light-bg-alpha-12,
+  raised-button:            $dark-bg-lighter-5,
+  focused-button:           $light-focused,
+  selected-button:          $dark-bg-lighter-20,
+  selected-disabled-button: $dark-bg-lighter-30,
+  disabled-button-toggle:   $dark-bg-lighter-10,
+  unselected-chip:          $dark-bg-lighter-20,
+  disabled-list-option:     $dark-bg-lighter-10,
+);
+
+
+// Theme Config
+
+body {
+  --primary-700: #14589c;
+  --primary-500: #1e6f9f;
+  --primary-300: #3294f8;
+  --primary-100: #4EA8DE;
+
+  --accent-500: #4244bc;
+  --accent-500: #5e60ce;
+  --accent-300: #8284fa;
+
+  --warn-500: #ce1f2a;
+  --warn-500: #dc3140;
+  --warn-300: #f5c1c6;
+
+  --light-text: #{$light-text};
+  --gray-900: #040F1A;
+  --gray-800: #071422;
+  --gray-700: #0B1B2B;
+  --gray-600: #112131;
+  --gray-500: #1C2F41;
+  --gray-400: #3A536B;
+  --gray-300: #7B96B2;
+  --gray-200: #AFC2D4;
+  --gray-100: #C4D4E3;
+}
+$mat-primary: (
+  main: #1e6f9f,
+  lighter: #3294f8,
+  darker: #14589c,
+  200: #1e6f9f, // For slide toggle,
+  contrast : (
+    main: $light-primary-text,
+    darker: $light-primary-text,
+  )
+);
+$theme-primary: mat.define-palette($mat-primary, main, lighter, darker);
+
+$mat-accent: (
+  main: #5e60ce,
+  lighter: #8284fa,
+  darker: #4244bc,
+  200: #5e60ce, // For slide toggle,
+  contrast : (
+    main: $light-primary-text,
+    darker: $light-primary-text,
+  )
+);
+$theme-accent: mat.define-palette($mat-accent, main, lighter, darker);
+
+$mat-warn: (
+  main: #dc3140,
+  lighter: #f5c1c6,
+  darker: #ce1f2a,
+  200: #dc3140, // For slide toggle,
+  contrast : (
+    main: $light-primary-text,
+    darker: $light-primary-text,
+  )
+);
+$theme-warn: mat.define-palette($mat-warn, main, lighter, darker);
+
+$fontConfig: mat.define-typography-config(
+  $headline-1: mat.define-typography-level(112px, 112px, 300, 'Nunito', -0.0134em),
+  $headline-2: mat.define-typography-level(56px, 56px, 400, 'Nunito', -0.0089em),
+  $headline-3: mat.define-typography-level(45px, 48px, 400, 'Nunito', 0.0000em),
+  $headline-4: mat.define-typography-level(34px, 40px, 400, 'Nunito', 0.0074em),
+  $headline-5: mat.define-typography-level(24px, 32px, 400, 'Nunito', 0.0000em),
+  $headline-6: mat.define-typography-level(20px, 32px, 500, 'Nunito', 0.0075em),
+  $subtitle-1: mat.define-typography-level(16px, 28px, 400, 'Nunito', 0.0094em),
+  $subtitle-2: mat.define-typography-level(15px, 24px, 500, 'Nunito', 0.0067em),
+  $body-1: mat.define-typography-level(14px, 20px, 400, 'Nunito', 0.0179em),
+  $body-2: mat.define-typography-level(14px, 24px, 500, 'Nunito', 0.0179em),
+  $button: mat.define-typography-level(14px, 14px, 500, 'Nunito', 0.0893em),
+  $caption: mat.define-typography-level(12px, 20px, 400, 'Nunito', 0.0333em),
+);
+
+$theme: mat.define-dark-theme((
+ color: (
+   primary: $theme-primary,
+   accent: $theme-accent,
+   is-dark: true,
+   foreground: $mat-dark-theme-foreground,
+   background: $mat-dark-theme-background,
+ ),
+ typography: $fontConfig,
+ density: 0,
+));
+
+// Theme Init
+@include mat.all-component-themes($theme);

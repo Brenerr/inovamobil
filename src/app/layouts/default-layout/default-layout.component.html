@@ -1,0 +1,40 @@
+<header>
+  <nav class="navbar">
+    <ul>
+      <li>
+        <a
+          class="menu-button"
+          [routerLink]="['/']"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          Produtos
+        </a>
+      </li>
+      <span class="spacer"></span>
+      <li>
+        <a
+          class="menu-button"
+          [routerLink]="['/inventory']"
+          routerLinkActive="active"
+        >
+          Inventário
+        </a>
+      </li>
+      <li>
+        <a
+          class="menu-button"
+          [routerLink]="['/users']"
+          routerLinkActive="active"
+        >
+          Usuários
+        </a>
+      </li>
+    </ul>
+    <app-avatar [letter]="'B'"></app-avatar>
+  </nav>
+</header>
+
+<main class="container">
+  <router-outlet></router-outlet>
+</main>

@@ -1,0 +1,13 @@
+.avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 3.125rem;
+  height: 3.125rem;
+  border-radius: 50%;
+
+  font: bold 1.125em Nunito, sans-serif;
+  background: var(--gray-400);
+  cursor: pointer;
+}
