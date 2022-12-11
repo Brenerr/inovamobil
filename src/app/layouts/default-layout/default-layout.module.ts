@@ -6,6 +6,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { DefaultLayoutRoutingModule } from './default-layout-routing.module';
 import { DefaultLayoutComponent } from './default-layout.component';
 import { AvatarModule } from '../../utils/components/avatar/avatar.module';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { AvatarModule } from '../../utils/components/avatar/avatar.module';
     DefaultLayoutRoutingModule,
     MatToolbarModule,
     AvatarModule,
+    MatIconModule,
   ]
 })
 export class DefaultLayoutModule { }

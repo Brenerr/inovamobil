@@ -7,9 +7,23 @@
 html, body {
   height: 100vh;
   color: var(--light-text);
-  background: var(--gray-800);
   font-family: Nunito, sans-serif;
+  line-height: 160%;
   -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background: var(--gray-800);
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    height: 8.8rem;
+    background: url('/assets/cover.png') no-repeat center / cover;
+    z-index: -999;
+  }
 }
 
 a {

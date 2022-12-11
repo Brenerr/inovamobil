@@ -1,0 +1,71 @@
+section {
+  border-radius: 0.5rem;
+  background: url('/assets/bg-product.png') no-repeat center / cover;
+}
+
+.toolbar {
+  display: block;
+  padding: 1rem;
+
+  button {
+    font: 700 0.875rem/1.6 Nunito, sans-serif;
+    text-transform: uppercase;
+    color: var(--primary-300);
+  }
+}
+
+.content {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+  padding: 0 2rem 2rem;
+  text-align: center;
+  gap: 2rem;
+
+  grid-template-areas:
+    'TITLE'
+    'IMG'
+    'DCP'
+    'PRC';
+
+  h2 {
+    font: 800 2.5rem/1.6 Nunito, sans-serif;
+    grid-area: TITLE;
+  }
+
+  strong {
+    font: 800 1.5rem/1.6 Nunito, sans-serif;
+    color: var(--accent-300);
+    grid-area: PRC;
+  }
+
+  p {
+    color: var(--gray-200);
+    text-align: justify;
+    grid-area: DCP;
+  }
+
+  @media screen and (min-width: 992px) {
+    text-align: start;
+    padding: 2rem 3rem;
+
+    grid-template-columns: 50% auto;
+    grid-template-rows: 4rem 3rem auto;
+
+    grid-template-areas:
+      'IMG TITLE'
+      'IMG PRC'
+      'IMG DCP';
+  }
+}
+
+.picture-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-area: IMG;
+
+  img {
+    width: 80%;
+  }
+}

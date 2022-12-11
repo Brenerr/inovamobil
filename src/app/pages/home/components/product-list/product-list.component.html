@@ -1,0 +1,15 @@
+<span class="header-list">
+  <p>Resultados para "Nike"</p>
+  <p>{{products.length}} produtos</p>
+</span>
+
+<section class="listContainer">
+  <app-product-card
+    *ngFor="let product of products"
+    [id]="product.id"
+    [title]="product.title"
+    [description]="product.description"
+    [price]="product.price"
+    [picture]="product.picture"
+  ></app-product-card>
+</section>

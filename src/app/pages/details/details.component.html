@@ -1,1 +1,22 @@
-<p>details works!</p>
+<section>
+  <span class="toolbar">
+    <button mat-button (click)="back()">
+      <mat-icon>keyboard_arrow_left</mat-icon>
+      VOLTAR
+    </button>
+  </span>
+
+  <span class="content">
+
+    <h2>{{ product.title }}</h2>
+
+    <span class="picture-container">
+      <img [src]="product.picture" />
+    </span>
+
+    <p>{{ product.description }}</p>
+
+    <strong>{{ product.price }}</strong>
+
+  </span>
+</section>
