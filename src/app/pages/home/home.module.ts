@@ -11,14 +11,15 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { FiltersComponent } from './components/filters/filters.component';
 import { InputModule } from '../../utils/components/input/input.module';
-import { ProductCardModule } from '../../utils/components/product-card/product-card.module';
 import { ProductListComponent } from './components/product-list/product-list.component';
+import { ProductCardComponent } from './components/product-card/product-card.component';
 
 @NgModule({
   declarations: [
     HomeComponent,
     FiltersComponent,
-    ProductListComponent
+    ProductListComponent,
+    ProductCardComponent,
   ],
   imports: [
     CommonModule,
@@ -29,7 +30,6 @@ import { ProductListComponent } from './components/product-list/product-list.com
     MatButtonModule,
     MatIconModule,
     InputModule,
-    ProductCardModule,
   ]
 })
 export class HomeModule { }

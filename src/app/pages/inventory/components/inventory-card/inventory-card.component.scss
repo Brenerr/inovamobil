@@ -1,0 +1,102 @@
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  gap: 2rem;
+  padding: 1.5rem 1.25rem;
+
+  text-align: center;
+  border-radius: 1rem;
+  background: var(--gray-600);
+  transition: background-color 0.2s;
+
+  img {
+    width: 6.25rem;
+    height: 6.25rem;
+    display: none;
+  }
+
+  &:hover {
+    background: var(--gray-500);
+  }
+}
+
+.info {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  text-align: start;
+
+  p {
+    color: var(--gray-200);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: start;
+  }
+}
+
+.title {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+
+  a {
+    font: bold 1.25rem/1.6 Nunito, sans-serif;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: start;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  strong {
+    font: 800 1.25rem/1.6 Nunito, sans-serif;
+    color: var(--accent-300);
+  }
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  color: var(--gray-200);
+
+  transition: width 0.2s ease-in-out;
+
+  button[mat-icon-button] {
+    transform: scale(0.8);
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .card  {
+    img {
+      display: block;
+    }
+
+    &:hover {
+      .actions {
+        width: 10rem;
+      }
+    }
+  }
+
+  .actions {
+    width: 0;
+    overflow: hidden;
+  }
+}

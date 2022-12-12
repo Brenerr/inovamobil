@@ -4,6 +4,7 @@
       <li>
         <a
           class="menu-button"
+          title="Produtos"
           [routerLink]="['/']"
           routerLinkActive="active"
           [routerLinkActiveOptions]="{ exact: true }"
@@ -15,25 +16,30 @@
       <li>
         <a
           class="menu-button"
+          title="Inventário"
           [routerLink]="['/inventory']"
           routerLinkActive="active"
         >
-          <mat-icon>keyboard_arrow_left</mat-icon>
+          <mat-icon>category</mat-icon>
           <p>Inventário</p>
         </a>
       </li>
       <li>
         <a
           class="menu-button"
+          title="Usuários"
           [routerLink]="['/users']"
           routerLinkActive="active"
         >
-          <mat-icon>keyboard_arrow_left</mat-icon>
+          <mat-icon>group</mat-icon>
           <p>Usuários</p>
         </a>
       </li>
+      <button class="menu-button" title="Sair">
+        <mat-icon>logout</mat-icon>
+        <p>Sair</p>
+      </button>
     </ul>
-    <app-avatar [letter]="'B'"></app-avatar>
   </nav>
 </header>
 

@@ -1,0 +1,71 @@
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  gap: 2rem;
+  padding: 1.5rem 1.25rem;
+
+  text-align: center;
+  border-radius: 1rem;
+  background: var(--gray-600);
+  transition: background-color 0.2s;
+
+  &:hover {
+    background: var(--gray-500);
+  }
+}
+
+.info {
+  text-align: start;
+  width: 100%;
+
+  h2 {
+    font: bold 1.25rem/1.6 Nunito, sans-serif;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: start;
+  }
+
+  p {
+    color: var(--gray-200);
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: start;
+  }
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  color: var(--gray-200);
+
+  // transition: width 0.2s ease-in-out;
+
+  button[mat-icon-button] {
+    transform: scale(0.8);
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .card {
+    &:hover {
+      .actions {
+        width: 8rem;
+      }
+    }
+  }
+
+  .actions {
+    width: 0;
+    overflow: hidden;
+  }
+}

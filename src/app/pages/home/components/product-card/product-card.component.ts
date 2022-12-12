@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-
+import { ProductProps } from 'src/app/core/models/Product.model';
 
 @Component({
   selector: 'app-product-card',
@@ -7,9 +7,5 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./product-card.component.scss']
 })
 export class ProductCardComponent {
-  @Input() id: string = '';
-  @Input() title: string = '';
-  @Input() description: string = '';
-  @Input() price: number = 0;
-  @Input() picture: string = '';
+  @Input() product: ProductProps | undefined;
 }

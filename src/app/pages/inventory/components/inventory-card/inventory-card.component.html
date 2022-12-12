@@ -1,0 +1,27 @@
+<div class="card">
+  <img [src]="product.picture" />
+  <span class="info">
+    <span class="title">
+      <a [routerLink]="['/', product.id]">{{ product.title }}</a>
+      <strong>{{ product.price }}</strong>
+    </span>
+    <p>{{ product.description }}</p>
+  </span>
+
+  <section class="actions">
+    <button
+      mat-icon-button
+      aria-label="Example icon button with a arrow right"
+      class="icon-button-small"
+    >
+      <mat-icon>edit_square</mat-icon>
+    </button>
+    <button
+      mat-icon-button
+      aria-label="Example icon button with a arrow right"
+      class="icon-button-small"
+    >
+      <mat-icon>delete</mat-icon>
+    </button>
+  </section>
+</div>

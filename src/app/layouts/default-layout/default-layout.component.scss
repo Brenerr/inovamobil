@@ -1,9 +1,5 @@
 .navbar {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   padding: 1rem;
-  gap: 2rem;
   max-width: 70rem;
   margin: 0 auto;
 }
@@ -25,18 +21,25 @@ ul {
   display: flex;
   align-items: center;
   justify-content: center;
+
+  gap: 0.5rem;
   height: 3.125rem;
   padding: 0 0.5rem;
+
   font: bold 1.125em/1.6 Nunito, sans-serif;
   transition: border-color 0.2s;
-  border-top: 2px solid transparent;
-  border-bottom: 2px solid transparent;
+  border: 2px solid transparent;
+  border-radius: 0;
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
 
   p {
     display: none;
   }
 
   &:not(.active):hover {
+    background: transparent;
     border-bottom-color: var(--primary-300);
   }
 
