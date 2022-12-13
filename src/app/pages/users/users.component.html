@@ -1,10 +1,24 @@
 <section>
-  <app-input size="large" placeholder="Buscar usuário"></app-input>
+  <app-input size="medium" placeholder="Buscar usuário"></app-input>
+  <section *ngIf="users$ | async as users; else loading">
+    <button mat-button id="new-user" (click)="createUser()">
+      <mat-icon>add</mat-icon>
+      Cadastrar usuário
+    </button>
 
-  <button mat-button id="new-user">
-    <mat-icon>add</mat-icon>
-    Cadastrar usuário
-  </button>
+    <span class="header-list">
+      <!-- <p>Resultados para "Brener"</p> -->
+      <p>{{ users.length }} usuários</p>
+    </span>
 
-  <app-user-list></app-user-list>
+    <section class="listContainer">
+      <app-user-card *ngFor="let user of users" [user]="user" (updatedUser)="getAll()"></app-user-card>
+    </section>
+  </section>
+
+  <ng-template #loading>
+    <div class="loading">
+      <mat-spinner [diameter]="40"></mat-spinner>
+    </div>
+  </ng-template>
 </section>

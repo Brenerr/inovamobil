@@ -1,3 +1,14 @@
+@mixin truncate($rows) {
+  -webkit-line-clamp: $rows;
+}
+
+%truncateBase {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .card {
   display: flex;
   align-items: center;
@@ -6,10 +17,13 @@
   gap: 2rem;
   padding: 1.5rem 1.25rem;
 
-  text-align: center;
   border-radius: 1rem;
   background: var(--gray-600);
   transition: background-color 0.2s;
+
+  app-avatar {
+    display: none;
+  }
 
   &:hover {
     background: var(--gray-500);
@@ -17,27 +31,19 @@
 }
 
 .info {
-  text-align: start;
   width: 100%;
+  text-align: start;
 
   h2 {
+    @extend %truncateBase;
+    @include truncate(1);
     font: bold 1.25rem/1.6 Nunito, sans-serif;
-    display: -webkit-box;
-    -webkit-line-clamp: 1;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    text-align: start;
   }
 
   p {
+    @extend %truncateBase;
+    @include truncate(1);
     color: var(--gray-200);
-    display: -webkit-box;
-    -webkit-line-clamp: 1;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    text-align: start;
   }
 }
 
@@ -45,6 +51,7 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  padding: 0 1rem;
   gap: 0.5rem;
   color: var(--gray-200);
 
@@ -56,10 +63,16 @@
 }
 
 @media screen and (min-width: 992px) {
+
   .card {
+    app-avatar {
+      display: block;
+    }
+
     &:hover {
       .actions {
-        width: 8rem;
+        width: auto;
+        overflow: visible;
       }
     }
   }

@@ -1,12 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { MatToolbarModule } from '@angular/material/toolbar';
-
 import { DefaultLayoutRoutingModule } from './default-layout-routing.module';
 import { DefaultLayoutComponent } from './default-layout.component';
-import { AvatarModule } from '../../utils/components/avatar/avatar.module';
-import { MatIconModule } from '@angular/material/icon';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -15,9 +12,7 @@ import { MatIconModule } from '@angular/material/icon';
   imports: [
     CommonModule,
     DefaultLayoutRoutingModule,
-    MatToolbarModule,
-    AvatarModule,
-    MatIconModule,
-  ]
+    SharedModule,
+  ],
 })
 export class DefaultLayoutModule { }

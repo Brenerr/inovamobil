@@ -1,4 +1,4 @@
-<section>
+<section *ngIf="product$ | async as product; else loading">
   <span class="toolbar">
     <button mat-button (click)="back()">
       <mat-icon>keyboard_arrow_left</mat-icon>
@@ -7,16 +7,19 @@
   </span>
 
   <span class="content">
-
     <h2>{{ product.title }}</h2>
 
     <span class="picture-container">
-      <img [src]="product.picture" />
+      <img [src]="product.imageBase64" />
     </span>
 
     <p>{{ product.description }}</p>
 
     <strong>{{ product.price }}</strong>
-
   </span>
 </section>
+<ng-template #loading>
+  <div class="loading">
+    <mat-spinner [diameter]="40"></mat-spinner>
+  </div>
+</ng-template>

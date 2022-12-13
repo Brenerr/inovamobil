@@ -8,9 +8,43 @@
   app-input {
     width: 100%;
   }
+}
 
-  button {
-    height: 2.625rem;
+.filter {
+  border-radius: 0.25rem;
+  background: var(--primary-700);
+  color: var(--text);
+  transition: filter 0.2s ease-in-out;
+
+  &:hover {
+    filter: brightness(130%);
   }
 }
 
+.header-list {
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-start;
+  gap: 1rem;
+  margin: 2rem 0;
+
+  p {
+    color: var(--gray-200);
+    font: 400 0.875rem/1.6 Nunito, sans-serif;
+    white-space: nowrap;
+
+    &:last-child {
+      width: 100%;
+      text-align: end;
+    }
+  }
+}
+
+.listContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  align-items: stretch;
+  justify-content: flex-start;
+  gap: 4rem 2rem;
+  padding: 2rem 0;
+}

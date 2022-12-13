@@ -1,1 +1,37 @@
-<p>login works!</p>
+<main>
+  <span class="bg-circle"></span>
+  <section>
+    <h1>
+      Tenha o
+      <strong>controle</strong>
+      de
+      <br />
+      todos os seus produtos
+    </h1>
+    <p>Gerencie seu estoque!</p>
+  </section>
+
+  <form [formGroup]="formLogin" novalidate>
+    <h2>Login</h2>
+    <mat-form-field appearance="outline">
+      <mat-label>Nome de usuário</mat-label>
+      <input type="text" matInput formControlName="username" placeholder="Nome de usuário">
+      <mat-error *ngIf="formLogin.get('username')?.hasError('required') && formLogin.get('username')?.touched">
+        Nome de usuário é <strong>obrigatório</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Senha</mat-label>
+      <input type="password" matInput formControlName="password">
+      <mat-error *ngIf="formLogin.get('password')?.invalid && formLogin.get('password')?.touched">
+        Senha é
+        <strong>obrigatória</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" (click)="login()">
+      Entrar
+    </button>
+  </form>
+</main>

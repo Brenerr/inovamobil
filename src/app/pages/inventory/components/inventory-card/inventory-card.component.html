@@ -1,5 +1,5 @@
 <div class="card">
-  <img [src]="product.picture" />
+  <img [src]="product.imageBase64" />
   <span class="info">
     <span class="title">
       <a [routerLink]="['/', product.id]">{{ product.title }}</a>
@@ -10,16 +10,18 @@
 
   <section class="actions">
     <button
+      title="Editar"
       mat-icon-button
-      aria-label="Example icon button with a arrow right"
-      class="icon-button-small"
+      aria-label="Example icon button with a edit"
+      (click)="editProduct(product)"
     >
       <mat-icon>edit_square</mat-icon>
     </button>
     <button
+      title="Deletar"
       mat-icon-button
-      aria-label="Example icon button with a arrow right"
-      class="icon-button-small"
+      aria-label="Example icon button with a trash"
+      (click)="deleteProduct(product.id)"
     >
       <mat-icon>delete</mat-icon>
     </button>

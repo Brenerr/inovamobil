@@ -1,11 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { DetailsRoutingModule } from './details-routing.module';
 import { DetailsComponent } from './details.component';
-import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
-
+import { DetailsRoutingModule } from './details-routing.module';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -14,8 +12,7 @@ import { MatIconModule } from '@angular/material/icon';
   imports: [
     CommonModule,
     DetailsRoutingModule,
-    MatButtonModule,
-    MatIconModule,
+    SharedModule,
   ]
 })
 export class DetailsModule { }

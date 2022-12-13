@@ -8,9 +8,6 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 1.5rem 1rem;
-  background: var(--gray-600);
-  border-radius: 0.75rem;
 
   button[mat-icon-button] {
     transform: scale(0.6);
@@ -24,5 +21,3 @@
 #min-term {
   margin-right: 0.5rem;
 }
-
-

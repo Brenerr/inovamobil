@@ -1,12 +1,35 @@
 <section>
   <form class="search">
-    <app-input size="large" placeholder="Buscar produto"></app-input>
-    <button mat-raised-button color="primary">
-      <mat-icon>keyboard_arrow_left</mat-icon>
+    <app-input size="medium" placeholder="Buscar produto"></app-input>
+    <button
+      mat-icon-button
+      title="Filtrar"
+      type="button"
+      class="filter"
+      color="primary"
+      aria-label="Example icon button with a filter"
+      (click)="openDialog()"
+    >
+      <mat-icon>filter_list</mat-icon>
     </button>
   </form>
+  <section *ngIf="products$ | async as products; else loading">
+    <span class="header-list">
+      <!-- <p>Resultados para "Brener"</p> -->
+      <p>{{ products.length }} produtos</p>
+    </span>
 
-  <app-product-list></app-product-list>
+    <section class="listContainer">
+      <app-product-card
+        *ngFor="let product of products"
+        [product]="product"
+      ></app-product-card>
+    </section>
+  </section>
+
+  <ng-template #loading>
+    <div class="loading">
+      <mat-spinner [diameter]="40"></mat-spinner>
+    </div>
+  </ng-template>
 </section>
-
-<!-- <app-filters></app-filters> -->

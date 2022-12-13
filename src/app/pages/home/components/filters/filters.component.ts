@@ -1,12 +1,12 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 
-interface RangeProps {
+interface IRange {
   min: number
   max: number
 }
 
-interface OptionProps {
-  range: RangeProps
+interface IOptionRange {
+  range: IRange
 }
 
 @Component({
@@ -16,7 +16,7 @@ interface OptionProps {
   encapsulation: ViewEncapsulation.None
 })
 export class FiltersComponent {
-  options: OptionProps[] = [
+  options: IOptionRange[] = [
     { range: {min: 0, max: 5000}},
     { range: {min: 5000, max: 20000}},
     { range: {min: 20000, max: 50000}},

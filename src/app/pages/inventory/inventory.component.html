@@ -1,10 +1,28 @@
 <section>
-  <app-input size="large" placeholder="Buscar produto"></app-input>
+  <app-input size="medium" placeholder="Buscar usuário"></app-input>
+  <section *ngIf="products$ | async as products; else loading">
+    <button mat-button id="new-product" (click)="createProduct()">
+      <mat-icon>add</mat-icon>
+      Cadastrar produto
+    </button>
 
-  <button mat-button id="new-product">
-    <mat-icon>add</mat-icon>
-    Cadastrar produto
-  </button>
+    <span class="header-list">
+      <!-- <p>Resultados para "Brener"</p> -->
+      <p>{{ products.length }} produtos</p>
+    </span>
 
-  <app-inventory-list></app-inventory-list>
+    <section class="listContainer">
+      <app-inventory-card
+        *ngFor="let product of products"
+        [product]="product"
+        (updatedProduct)="getAll()"
+      ></app-inventory-card>
+    </section>
+  </section>
+
+  <ng-template #loading>
+    <div class="loading">
+      <mat-spinner [diameter]="40"></mat-spinner>
+    </div>
+  </ng-template>
 </section>

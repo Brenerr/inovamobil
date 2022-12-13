@@ -7,3 +7,41 @@
   text-transform: uppercase;
   color: var(--primary-300);
 }
+
+.header-list {
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-start;
+  gap: 1rem;
+  margin-bottom: 2rem;
+
+  p {
+    color: var(--gray-200);
+    font: 400 0.875rem/1.6 Nunito, sans-serif;
+    white-space: nowrap;
+
+    &:last-child {
+      width: 100%;
+      text-align: end;
+    }
+  }
+}
+
+.listContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 2rem;
+}
+
+app-user-card {
+  width: 100%;
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 5rem;
+}

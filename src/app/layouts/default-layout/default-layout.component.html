@@ -1,4 +1,4 @@
-<header>
+<header [ngClass]="{ 'bg-nav': bgNav }">
   <nav class="navbar">
     <ul>
       <li>
@@ -35,7 +35,7 @@
           <p>Usuários</p>
         </a>
       </li>
-      <button class="menu-button" title="Sair">
+      <button class="menu-button" (click)="logout()" title="Sair">
         <mat-icon>logout</mat-icon>
         <p>Sair</p>
       </button>

@@ -1,22 +1,24 @@
 <div class="card">
-  <app-avatar letter="B"></app-avatar>
+  <app-avatar [letter]="user.username.charAt(0).toUpperCase()"></app-avatar>
   <span class="info">
-    <h2 [routerLink]="['/', user.id]">{{ user.username }}</h2>
+    <h2>{{ user.username }}</h2>
     <p>{{ user.role }}</p>
   </span>
 
   <section class="actions">
     <button
+      title="Editar"
       mat-icon-button
-      aria-label="Example icon button with a arrow right"
-      class="icon-button-small"
+      aria-label="Example icon button with a edit"
+      (click)="editUser(user)"
     >
       <mat-icon>edit_square</mat-icon>
     </button>
     <button
+      title="Deletar"
       mat-icon-button
-      aria-label="Example icon button with a arrow right"
-      class="icon-button-small"
+      aria-label="Example icon button with a trash"
+      disabled
     >
       <mat-icon>delete</mat-icon>
     </button>

@@ -1,0 +1,31 @@
+<h2 mat-dialog-title>Cadastrar usuário</h2>
+<mat-dialog-content class="mat-typography">
+  <app-avatar [letter]="formUser.controls['username'].value.charAt(0).toUpperCase()" size="big"></app-avatar>
+  <form [formGroup]="formUser">
+
+    <mat-form-field appearance="outline">
+      <mat-label>Nome de usuário</mat-label>
+      <input type="text" matInput formControlName="username" placeholder="Nome de usuário">
+      <mat-error *ngIf="formUser.get('username')?.hasError('required') && formUser.get('username')?.touched">
+        Nome de usuário é <strong>obrigatório</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>ESenha</mat-label>
+      <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+      <mat-error *ngIf="formUser.get('password')?.hasError('required') && formUser.get('password')?.touched">
+        Senha é <strong>obrigatória</strong>
+      </mat-error>
+    </mat-form-field>
+
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancelar</button>
+  <button mat-raised-button color="primary" (click)="saveUser()">Salvar</button>
+</mat-dialog-actions>

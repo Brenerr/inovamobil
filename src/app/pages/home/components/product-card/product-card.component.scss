@@ -1,3 +1,14 @@
+@mixin truncate($rows) {
+  -webkit-line-clamp: $rows;
+}
+
+%truncateBase {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .card {
   display: flex;
   flex-direction: column;
@@ -16,12 +27,9 @@
   cursor: pointer;
 
   h2 {
+    @extend %truncateBase;
+    @include truncate(1);
     font: bold 1.25rem/1.6 Nunito, sans-serif;
-    display: -webkit-box;
-    -webkit-line-clamp: 1;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
   }
 
   img {
@@ -31,12 +39,8 @@
   }
 
   p {
-    color: var(--gray-200);
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    @extend %truncateBase;
+    @include truncate(2);
   }
 
   strong {
