@@ -29,6 +29,11 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 <br>
 
 <div align="center" >
+  <img align="center" src="./public/web-details.png" alt="cover" width="99%">
+</div>
+<br>
+
+<div align="center" >
   <img align="center" src="./public/web-inventory.png" alt="cover" width="99%">
 </div>
 <br>
