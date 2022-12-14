@@ -26,7 +26,7 @@ export class UsersComponent {
   }
 
   ngOnInit() {
-    this.isManager = this.authService.getUserLogged.role === 'manager';
+    this.isManager = this.authService.getUserLogged?.role === 'manager';
   }
 
   getAll() {

@@ -18,7 +18,7 @@ export class DefaultLayoutComponent {
   }
 
   ngOnInit() {
-    this.isManager = this.authService.getUserLogged.role === 'manager';
+    this.isManager = this.authService.getUserLogged?.role === 'manager';
   }
 
   @HostListener('window:scroll') onScroll() {

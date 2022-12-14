@@ -10,7 +10,7 @@ export class UserAuthenticatedGuard implements CanActivate {
   constructor(private authService: AuthService, private router: Router) {}
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-    const currentRole: Role = this.authService.getUserLogged.role
+    const currentRole: Role = this.authService.getUserLogged?.role
 
     if (this.authService.isLogged) {
       if (route.data['roles'].includes(currentRole)) {
