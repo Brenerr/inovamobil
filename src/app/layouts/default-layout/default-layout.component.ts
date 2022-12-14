@@ -9,10 +9,17 @@ import { AuthService } from 'src/app/core/services/auth/auth.service';
 export class DefaultLayoutComponent {
 
   bgNav:boolean = false;
+  isManager: boolean = false;
 
   constructor(
     private authService: AuthService,
-  ) {}
+  ) {
+
+  }
+
+  ngOnInit() {
+    this.isManager = this.authService.getUserLogged.role === 'manager';
+  }
 
   @HostListener('window:scroll') onScroll() {
     this.bgNav = window.scrollY >= 50;

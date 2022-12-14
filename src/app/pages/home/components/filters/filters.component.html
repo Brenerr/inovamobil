@@ -1,14 +1,24 @@
 <h2 mat-dialog-title>Filtrar produtos</h2>
 <mat-dialog-content class="mat-typography">
   <mat-radio-group aria-label="Select an option" class="radio-group">
-    <mat-radio-button class="radio-button" *ngFor="let option of options" [value]="option.range">
+    <mat-radio-button
+      class="radio-button"
+      *ngFor="let option of options"
+      [value]="option.range"
+    >
       <span *ngIf="!option.range.min">Até</span>
-      <span *ngIf="option.range.min">R$ {{option.range.min}} - </span>
-      <span>R$ {{option.range.max}}</span>
+      <span *ngIf="option.range.min">R$ {{ option.range.min }} -</span>
+      <span>R$ {{ option.range.max }}</span>
     </mat-radio-button>
     <mat-radio-button class="radio-button" [value]="0">
-      <app-input id="min-term" size="small" placeholder="Mín"></app-input>
-      <app-input id="max-term" size="small" placeholder="Máx"></app-input>
+      <mat-form-field id="min-price">
+        <mat-label>Mín</mat-label>
+        <input matInput placeholder="Mín" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Máx</mat-label>
+        <input matInput placeholder="Máx" />
+      </mat-form-field>
     </mat-radio-button>
   </mat-radio-group>
 </mat-dialog-content>

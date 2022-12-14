@@ -16,7 +16,7 @@
 
 .big {
   @extend %baseAvatar;
-  @include avatarProps(5rem, 2.5rem);
+  @include avatarProps(8rem, 3rem);
 }
 
 .small {

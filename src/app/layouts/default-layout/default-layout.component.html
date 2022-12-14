@@ -26,6 +26,7 @@
       </li>
       <li>
         <a
+          *ngIf="isManager"
           class="menu-button"
           title="Usuários"
           [routerLink]="['/users']"

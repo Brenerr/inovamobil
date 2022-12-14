@@ -18,22 +18,26 @@ export class LoginComponent {
   constructor(
     private formBuilder: FormBuilder,
     private authService: AuthService,
-    private snackBar: MatSnackBar,
+    private _snackBar: MatSnackBar,
   ) {}
 
   login() {
     if (this.formLogin.invalid) return
     var user = this.formLogin.getRawValue() as IUser
     this.authService.login(user).subscribe((res) => {
+      console.log(res)
       if (!res) {
-        this.snackBar.open(
-          'Falha na autenticação',
-          'Usuário ou senha incorretos.',
-          {
-            duration: 3000,
-          },
-        )
+        this.openSnackBar('Falha na autenticação', 'Usuário ou senha incorretos.')
+        console.log('aqui')
       }
+    })
+  }
+
+  openSnackBar(message: string, action: string) {
+    this._snackBar.open(message, action, {
+      horizontalPosition: 'end',
+      verticalPosition: 'bottom',
+      duration: 2000,
     })
   }
 }

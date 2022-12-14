@@ -6,8 +6,8 @@ main {
   text-align: center;
   gap: 1rem;
   padding: 2rem;
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
   // background: url('/assets/bg-login.png') no-repeat top / cover;
   background: var(--gray-700);
   position: relative;
@@ -87,7 +87,7 @@ form {
   }
 }
 
-.field {
+mat-form-field {
   position: relative;
   display: flex;
   flex-direction: column;
